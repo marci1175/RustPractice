@@ -12,7 +12,7 @@ int times_two(int number) {
 std::string reverse_string(std::string string) {
 	std::string buf;
 	for (int i = 0; i < string.length(); i++) {
-		buf.push_back(string.at(i));
+		buf.push_back(string.at(string.length() - i - 1));
 	};
 
 	return buf;

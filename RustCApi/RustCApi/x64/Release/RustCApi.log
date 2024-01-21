@@ -1,7 +1,12 @@
 ﻿  main.cpp
+C:\Users\marci\Desktop\RustPractice\RustCApi\RustCApi\main.h(5,41): warning C4190: 'reverse_string' has C-linkage specified, but returns UDT 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' which is incompatible with C
+  (compiling source file 'main.cpp')
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xstring(5127,29):
+  see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+  
   Generating code
-  0 of 10 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+  2 of 100 functions ( 2.0%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
-  RustCApi.vcxproj -> C:\Users\marci\source\repos\RustCApi\x64\Release\RustCApi.exe
+  RustCApi.vcxproj -> C:\Users\marci\Desktop\RustPractice\RustCApi\x64\Release\RustCApi.exe

@@ -6,4 +6,8 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+cxx = "1.0.115"
 speed_test = "0.1.7"
+
+[build-dependencies]
+cxx-build = "1.0"
