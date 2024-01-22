@@ -1,18 +1,29 @@
-use std::{alloc::Layout, pin::Pin, ffi::CString};
-use cxx::CxxString;
-use crate::cpp_link::{hello, times_two};
+use std::{alloc::Layout, collections::HashMap, ffi::CString, ops::Index, pin::Pin, str::Chars};
 
-#[cxx::bridge]
-pub mod cpp_link {
-    unsafe extern "C++" {
-        pub fn hello() -> ();
-        pub fn times_two(number : i32) -> i32;
-        
-        pub fn reverse_string(string : &CxxString) -> &CxxString;
-    }
+#[derive(Default, Clone, Copy)]
+struct ViewAngles {
+    x: f64,
+    y: f64,
+    z: f64,
 }
 
-#[no_mangle]
+#[derive(Default, Clone, Copy)]
+struct Coordinates {
+    x: f64,
+    y: f64,
+    z: f64,
+
+    viewangles: ViewAngles,
+}
+
+
+impl Index for Coordinates {
+    fn index(&self, index: Idx) -> &Self::Output {
+        &self[index]
+    }
+
+}
+
 unsafe fn pin_main() -> *const u8 {
     
     let ptr = unsafe { std::alloc::alloc(Layout::new::<Pin<Box<i32>>>()) };
@@ -23,22 +34,20 @@ unsafe fn pin_main() -> *const u8 {
 
 }
 
-fn main() {
-    unsafe {
+fn hashmap() {
+    let mut hashmap: HashMap<&str, i32> = HashMap::new();
 
-        //Hello from CPP
-        hello();
-
-        //Times_two from cpp
-        dbg!(times_two(100));
-
-        let sample_string: String = "Varga".to_string();
-
-        //dbg!(reverse_string(CString::from_vec_unchecked(sample_string.into_bytes())));
-
-        // dbg!(pin_main().read());
-
-        let _ = std::io::stdin().read_line(&mut String::new());
+    for num in 0..100 {
+        hashmap.insert("Hashmap", num as i32);
     }
 
+}
+
+fn main() {
+
+    unsafe { dbg!(pin_main().read()); }
+
+    hashmap();
+
+    let _ = std::io::stdin().read_line(&mut String::new());
 }

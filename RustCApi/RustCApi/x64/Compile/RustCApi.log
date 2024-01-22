@@ -1,8 +1,0 @@
-﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
-  main.cpp
-C:\Users\marci\Desktop\RustPractice\RustCApi\RustCApi\main.h(5,41): warning C4190: 'reverse_string' has C-linkage specified, but returns UDT 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' which is incompatible with C
-  (compiling source file 'main.cpp')
-  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xstring(5127,29):
-  see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-  
-  RustCApi.vcxproj -> C:\Users\marci\Desktop\RustPractice\lib\RustCApi.lib
